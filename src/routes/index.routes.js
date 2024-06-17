@@ -8,7 +8,7 @@ router.get('/',(req,res)=>{
     res.send('Backend listo')
 });
 // Create a new user
-router.post('/users', async (req, res) => {
+router.post('/api/users', async (req, res) => {
     try {
         const user = new User(req.body);
         await user.save();
@@ -19,7 +19,7 @@ router.post('/users', async (req, res) => {
 });
 
 // Get all users
-router.get('/users', async (req, res) => {
+router.get('/api/users', async (req, res) => {
     try {
         const users = await User.find({});
         res.status(200).send(users);
@@ -29,7 +29,7 @@ router.get('/users', async (req, res) => {
 });
 
 // Update a user
-router.put('/users/:id', async (req, res) => {
+router.put('/api/users/:id', async (req, res) => {
     try {
         const id = req.params.id;
         if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -46,7 +46,7 @@ router.put('/users/:id', async (req, res) => {
 });
 
 // Delete a user
-router.delete('/users/:id', async (req, res) => {
+router.delete('/api/users/:id', async (req, res) => {
     try {
         const id = req.params.id;
         if (!mongoose.Types.ObjectId.isValid(id)) {
