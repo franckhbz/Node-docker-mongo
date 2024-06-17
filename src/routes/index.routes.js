@@ -1,11 +1,11 @@
-// router.get('/',(req,res)=>{
-//     res.send('hello world')
-// });
+
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const User = require('../models/user.model');
-
+router.get('/',(req,res)=>{
+    res.send('hello world')
+});
 // Create a new user
 router.post('/users', async (req, res) => {
     try {
