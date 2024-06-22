@@ -1,12 +1,12 @@
-
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const User = require('../models/user.model');
 
-router.get('/',(req,res)=>{
-    res.send('Backend listo')
+router.get('/', (req, res) => {
+    res.send('Backend listo');
 });
+
 // Create a new user
 router.post('/api/users', async (req, res) => {
     try {
